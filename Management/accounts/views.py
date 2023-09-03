@@ -11,11 +11,3 @@ from django.http import Http404
 from djoser.serializers import UserCreateSerializer, UserSerializer
 from rest_framework import serializers
 from django.contrib.auth.models import User
-
-
-class Get_Username(APIView):
-    def get(self, request, format=None):
-        note = UserAccount.objects.all()
-        serializer = UserCreateSerializer(note, many=True)
-        return Response(serializer.data)
-
